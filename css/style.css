@@ -1,0 +1,78 @@
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                      url('../images/Ivern_0.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    margin: 0;
+    
+    /* Flexbox pour pousser le footer en bas */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    background-color: darkslategrey;
+    color: antiquewhite;
+    padding: 10px 20px;
+}
+
+/* Zones des joueurs */
+.player-zone {
+    padding: 20px;
+}
+
+/* Portraits */
+.portrait img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.portrait p {
+    color: white;
+    margin-top: 5px;
+}
+
+/* Cartes des champions */
+.card-champion {
+    margin: 10px;
+}
+
+.card-champion img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+    border: 3px solid gold;
+}
+
+.card-champion p {
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Effet hover sur les cartes */
+.card-champion:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+/* Ligne de séparation */
+.separator {
+    border: 2px solid gold;
+    margin: 20px 0;
+}
+
+/* Footer */
+footer {
+    background-color: darkslategrey;
+    color: antiquewhite;
+    padding: 10px;
+    text-align: center;
+}

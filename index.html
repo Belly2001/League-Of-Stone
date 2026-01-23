@@ -1,12 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-  </head>
+    <link rel="stylesheet" href="css/style.css">
+    <title>League of Stones</title>
+</head>
 <body>
+    <!-- Header -->
+    <header>
+        <label>League of Stones</label>
+    </header>
     
+    <!-- Zone Adversaire (Player 2) -->
+    <section class="player-zone" id="player2-zone">
+        <!-- Portrait Player 2 -->
+        <div class="portrait">
+            <img src="images/player2.png" alt="Player 2">
+            <p>Player 2</p>
+        </div>
+        
+        <!-- Cartes adversaire (1 carte) -->
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-4">
+                    <div class="card-champion">
+                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Thresh_0.jpg" alt="Thresh">
+                        <p>Thresh</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Ligne de séparation -->
+    <hr class="separator">
+    
+    <!-- Zone Joueur (Player 1) -->
+    <section class="player-zone" id="player1-zone">
+        <!-- Cartes joueur (2 cartes) -->
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-4">
+                    <div class="card-champion">
+                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ivern_0.jpg" alt="Ivern">
+                        <p>Ivern</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="card-champion">
+                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Taric_0.jpg" alt="Taric">
+                        <p>Taric</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Portrait Player 1 -->
+        <div class="portrait">
+            <img src="images/player1.png" alt="Player 1">
+            <p>Player 1</p>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <p>Copyright © Web2 L3 UT2J</p>
+    </footer>
 </body>
 </html>
