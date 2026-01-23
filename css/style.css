@@ -5,14 +5,12 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    min-height: 100vh;
+    height: 100vh;          /* Changé de min-height à height */
     margin: 0;
     
-    /* Flexbox pour pousser le footer en bas */
     display: flex;
     flex-direction: column;
 }
-
 /* Header */
 header {
     background-color: darkslategrey;
