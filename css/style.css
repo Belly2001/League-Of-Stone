@@ -1,49 +1,100 @@
+
+
 body {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
                       url('../images/Ivern_0.jpg');
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh;          /* Changé de min-height à height */
+
     margin: 0;
-    
+    height: 100vh;
+
     display: flex;
     flex-direction: column;
+
+    overflow: hidden; /* => pas de scroll */
 }
-/* Header */
+
+
+
 header {
     background-color: darkslategrey;
     color: antiquewhite;
+    padding: 8px 20px;
+    flex: 0 0 auto;
+}
+
+footer {
+    background-color: darkslategrey;
+    color: antiquewhite;
+    padding: 8px;
+    text-align: center;
+    flex: 0 0 auto;
+}
+
+
+.player-zone {
     padding: 10px 20px;
 }
 
-/* Zones des joueurs */
-.player-zone {
-    padding: 20px;
+/* Les deux zones se partagent la hauteur restante */
+#player2-zone,
+#player1-zone {
+    flex: 1;
+    display: flex;
+    align-items: center;       /* centre verticalement le contenu */
+    justify-content: space-between;
 }
 
-/* Portraits */
+/* Pour éviter les grosses marges bootstrap */
+.container {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.row {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+/*   PORTRAITS*/
+
+
+.portrait {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
 .portrait img {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     object-fit: cover;
 }
 
 .portrait p {
     color: white;
-    margin-top: 5px;
+    margin: 0;
 }
 
-/* Cartes des champions */
+/*  CARTES CHAMPIONS */
+
 .card-champion {
-    margin: 10px;
+    margin: 8px;
 }
 
+/* Taille des images cartes pour tenir dans 100vh */
 .card-champion img {
     width: 100%;
-    max-width: 300px;
+    max-width: 240px;      /* réduit (avant: 300px) */
+    max-height: 160px;     /* pour éviter scroll */
+    object-fit: cover;
+
     border-radius: 8px;
     border: 3px solid gold;
 }
@@ -52,6 +103,7 @@ header {
     color: white;
     text-align: center;
     font-weight: bold;
+    margin: 4px 0 0 0;
 }
 
 /* Effet hover sur les cartes */
@@ -61,16 +113,71 @@ header {
     transition: all 0.3s ease;
 }
 
-/* Ligne de séparation */
+
+/*   SEPARATEUR */
+
 .separator {
     border: 2px solid gold;
-    margin: 20px 0;
+    margin: 5px 0;
+    flex: 0 0 auto;
 }
 
-/* Footer */
-footer {
-    background-color: darkslategrey;
-    color: antiquewhite;
-    padding: 10px;
-    text-align: center;
+
+/*   1.3.1 ANIMATION DU PLATEAU
+   Les cartes arrivent par la gauche */
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-120px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Animation au chargement sur toutes les cartes */
+.card-champion {
+    opacity: 0;
+    animation: slideInLeft 0.8s ease-out forwards;
+}
+
+/* Délai pour faire un effet "une par une" */
+#player2-zone .card-champion { animation-delay: 0.1s; }
+
+/* Ici on cible les colonnes bootstrap (car .card-champion n'est pas enfant direct) */
+#player1-zone .row .col-12:nth-child(1) .card-champion { animation-delay: 0.3s; }
+#player1-zone .row .col-12:nth-child(2) .card-champion { animation-delay: 0.5s; }
+
+/* Accessibilité : réduire les animations si demandé */
+@media (prefers-reduced-motion: reduce) {
+    .card-champion {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* ADAPTATION PETITS ÉCRANS */
+
+@media (max-height: 700px) {
+    .card-champion img {
+        max-width: 200px;
+        max-height: 140px;
+    }
+
+    .portrait img {
+        width: 50px;
+        height: 50px;
+    }
+
+    header,
+    footer {
+        padding: 6px 12px;
+    }
+
+    .player-zone {
+        padding: 8px 12px;
+    }
 }
