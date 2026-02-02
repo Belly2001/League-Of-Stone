@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/jeu.css">
+    <title>League of Stones - Deck Builder</title>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>League of Stones</h1>
+    </header>
+
+    <!-- Contenu principal -->
+    <main>
+        <!-- Section des champions disponibles -->
+        <section class="champions-section">
+            <h2>Champions disponibles</h2>
+            <div id="champions-list" class="cards-grid">
+                <!-- Les cartes seront ajoutées ici par JavaScript -->
+                <p class="loading">Chargement des champions...</p>
+            </div>
+        </section>
+
+        <!-- Section du deck -->
+        <section class="deck-section">
+            <h2>Mon Deck (<span id="deck-count">0</span>/20)</h2>
+            <div id="deck-list" class="cards-grid">
+                <!-- Les cartes du deck seront ajoutées ici -->
+                <p class="empty-deck">Cliquez sur une carte pour l'ajouter au deck</p>
+            </div>
+            <button id="validate-btn" class="btn-validate" disabled>Valider le deck</button>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Copyright © Web2 L3 UT2J</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>

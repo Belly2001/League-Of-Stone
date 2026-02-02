@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                      url('../images/Ivern_0.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    background-color: darkslategrey;
+    color: antiquewhite;
+    padding: 15px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 24px;
+}
+
+/* Main */
+main {
+    flex: 1;
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* Sections */
+.champions-section {
+    flex: 2;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 15px;
+    overflow-y: auto;
+    max-height: 80vh;
+}
+
+.deck-section {
+    flex: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.champions-section h2,
+.deck-section h2 {
+    color: gold;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+/* Grille des cartes */
+.cards-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+/* Carte */
+.card {
+    width: 150px;
+    background-color: #1a1a2e;
+    border: 2px solid gold;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(255, 215, 0, 0.5);
+}
+
+.card img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+}
+
+.card-info {
+    padding: 8px;
+    color: white;
+}
+
+.card-info h3 {
+    font-size: 12px;
+    margin-bottom: 5px;
+    color: gold;
+}
+
+.card-stats {
+    font-size: 11px;
+}
+
+.card-stats p {
+    margin: 2px 0;
+}
+
+/* Messages */
+.loading,
+.empty-deck {
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Bouton valider */
+.btn-validate {
+    margin-top: auto;
+    padding: 10px 20px;
+    background-color: gold;
+    color: #1a1a2e;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-validate:hover:not(:disabled) {
+    background-color: #ffd700;
+}
+
+.btn-validate:disabled {
+    background-color: grey;
+    cursor: not-allowed;
+}
+
+/* Deck list */
+#deck-list {
+    flex: 1;
+    overflow-y: auto;
+    max-height: 60vh;
+}
+
+/* Footer */
+footer {
+    background-color: darkslategrey;
+    color: antiquewhite;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Message de succès */
+.success-message {
+    color: #00ff00;
+    font-size: 18px;
+    text-align: center;
+    padding: 20px;
+}
