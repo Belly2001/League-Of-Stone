@@ -1,3 +1,5 @@
+/* src/styles/globals.css */
+
 * {
     margin: 0;
     padding: 0;
@@ -5,8 +7,9 @@
 }
 
 body {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                      url('../images/Ivern_0.jpg');
+    background-color: #1a1a2e;
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                      url('/images/Ivern_0.jpg'); */
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
